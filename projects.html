@@ -81,67 +81,80 @@
 
     <div class="project-grid">
 
-      <article class="project-card">
-        <div class="project-thumb">
-          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-            <rect width="400" height="300" fill="#eae7df"/>
-            <rect x="40" y="40" width="140" height="220" fill="#141414"/>
-            <rect x="200" y="60" width="160" height="16" fill="#c81e1e"/>
-            <circle cx="280" cy="180" r="60" fill="none" stroke="#141414" stroke-width="6"/>
-            <line x1="40" y1="260" x2="360" y2="40" stroke="#141414" stroke-width="2"/>
-          </svg>
+      <article class="project-card" id="curatorial-project">
+        <div class="project-thumb image-slot">
+          <img src="assets/images/our-army-our-protectors-1978.jpg" alt="Maria Prymachenko, Our Army, Our Protectors, 1978">
         </div>
-        <p class="project-tag"><span class="mark"></span><span data-en="MA Research Essay — [PLACEHOLDER YEAR]" data-ru="Исследовательское эссе (магистратура) — [ГОД]">MA Research Essay — [PLACEHOLDER YEAR]</span></p>
-        <h3 data-en="[PLACEHOLDER — PROJECT TITLE]" data-ru="[НАЗВАНИЕ ПРОЕКТА]">[PLACEHOLDER — PROJECT TITLE]</h3>
-        <p data-en="[PLACEHOLDER — one to two sentence description of the project, its scope, and any institution or archive involved.]" data-ru="[МЕСТО ДЛЯ ОПИСАНИЯ — одно-два предложения о проекте, его охвате и учреждении или архиве, если они были задействованы.]">[PLACEHOLDER — one to two sentence description of the project, its scope, and any institution or archive involved.]</p>
-        <a href="#" class="project-more"><span class="mark"></span><span data-en="View project" data-ru="Смотреть проект">View project</span></a>
+        <p class="project-tag"><span class="mark"></span><span data-en="Curatorial Project · Virtual Exhibition" data-ru="Кураторский проект · Виртуальная выставка">Curatorial Project · Virtual Exhibition</span></p>
+        <h3 data-en="Art as a Form of Resistance" data-ru="Искусство как форма сопротивления">Art as a Form of Resistance</h3>
+        <p data-en="A virtual exhibition exploring how Ukrainian artistic traditions have adapted to political and social upheaval while sustaining cultural identity." data-ru="Виртуальная выставка о том, как украинские художественные традиции адаптировались к политическим и социальным потрясениям, сохраняя культурную идентичность.">A virtual exhibition exploring how Ukrainian artistic traditions have adapted to political and social upheaval while sustaining cultural identity.</p>
+        <button type="button" class="project-more" data-project-toggle="curatorial-project" aria-expanded="false"><span class="mark"></span><span data-en="View project" data-ru="Смотреть проект">View project</span></button>
+        <div class="project-detail" hidden>
+          <button type="button" class="project-back" data-project-close><span aria-hidden="true">←</span><span data-en="Back to projects" data-ru="Назад к проектам">Back to projects</span></button>
+          <div class="project-detail-grid">
+            <figure class="project-feature-image">
+              <div class="image-slot expanded-image-slot"><img src="assets/images/peace-2022.webp" alt="Iryna Maksymova, Peace, 2022"></div>
+              <figcaption data-en="Expanded image: Iryna Maksymova, Peace, 2022, 100 cm × 65 cm. Acrylic on canvas." data-ru="Расширенное изображение: Ирина Максимова, «Мир», 2022, 100 × 65 см. Акрил на холсте.">Expanded image: Iryna Maksymova, Peace, 2022, 100 cm × 65 cm. Acrylic on canvas.</figcaption>
+            </figure>
+            <div class="project-detail-copy">
+              <p class="project-award" data-en="Awarded High Distinction" data-ru="Отмечен высшей оценкой">Awarded High Distinction</p>
+              <h4 data-en="“I Paint for the People, for Joy, and for Peace”: Art as a Form of Resistance Visualised in 20th- and 21st-Century Ukrainian Folk Art" data-ru="«Я рисую для людей, для радости и для мира»: искусство как форма сопротивления в украинском народном искусстве XX и XXI веков">“I Paint for the People, for Joy, and for Peace”: Art as a Form of Resistance Visualised in 20th- and 21st-Century Ukrainian Folk Art</h4>
+              <p data-en="The project explored how Ukrainian artistic traditions of both the 20th and 21st centuries have been adapted in response to political and social upheaval, and how art can sustain cultural identity and function as a form of resistance." data-ru="Проект исследовал, как украинские художественные традиции XX и XXI веков адаптировались в ответ на политические и социальные потрясения, а также как искусство может поддерживать культурную идентичность и служить формой сопротивления.">The project explored how Ukrainian artistic traditions of both the 20th and 21st centuries have been adapted in response to political and social upheaval, and how art can sustain cultural identity and function as a form of resistance.</p>
+              <p class="project-citation" data-en="Thumbnail image: Maria Prymachenko, Our Army, Our Protectors, 1978, 61 cm × 86 cm. Gouache and fluorescent paint on paper." data-ru="Изображение миниатюры: Мария Примаченко, «Наша армия, наши защитники», 1978, 61 × 86 см. Гуашь и флуоресцентная краска на бумаге.">Thumbnail image: Maria Prymachenko, Our Army, Our Protectors, 1978, 61 cm × 86 cm. Gouache and fluorescent paint on paper.</p>
+              <div class="project-writeup" data-en="Full project writeup coming soon." data-ru="Полный текст проекта скоро появится.">Full project writeup coming soon.</div>
+            </div>
+          </div>
+        </div>
       </article>
 
-      <article class="project-card">
-        <div class="project-thumb">
-          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-            <rect width="400" height="300" fill="#eae7df"/>
-            <rect x="60" y="220" width="280" height="14" fill="#141414"/>
-            <rect x="60" y="180" width="200" height="14" fill="#141414"/>
-            <rect x="60" y="140" width="120" height="14" fill="#c81e1e"/>
-            <rect x="290" y="60" width="60" height="60" fill="#141414" transform="rotate(45 320 90)"/>
-          </svg>
+      <article class="project-card" id="dissertation">
+        <div class="project-thumb image-slot">
+          <img src="assets/images/at-home-among-strangers-a-stranger-among-his-own.jpg" alt="Nikita Mikhalkov, At Home Among Strangers, A Stranger Among His Own">
         </div>
-        <p class="project-tag"><span class="mark"></span><span data-en="Dissertation Chapter — [PLACEHOLDER YEAR]" data-ru="Глава диссертации — [ГОД]">Dissertation Chapter — [PLACEHOLDER YEAR]</span></p>
-        <h3 data-en="[PLACEHOLDER — PROJECT TITLE]" data-ru="[НАЗВАНИЕ ПРОЕКТА]">[PLACEHOLDER — PROJECT TITLE]</h3>
-        <p data-en="[PLACEHOLDER — one to two sentence description, e.g. close reading of a specific artist, exhibition, or publication.]" data-ru="[МЕСТО ДЛЯ ОПИСАНИЯ — одно-два предложения, например близкое рассмотрение творчества отдельного художника, выставки или публикации.]">[PLACEHOLDER — one to two sentence description, e.g. close reading of a specific artist, exhibition, or publication.]</p>
-        <a href="#" class="project-more"><span class="mark"></span><span data-en="View project" data-ru="Смотреть проект">View project</span></a>
+        <p class="project-tag"><span class="mark"></span><span data-en="Dissertation" data-ru="Диссертация">Dissertation</span></p>
+        <h3 data-en="The Eastern Genre in Soviet Cinema of the 1970s" data-ru="Восточный жанр в советском кино 1970-х годов">The Eastern Genre in Soviet Cinema of the 1970s</h3>
+        <p data-en="A study of how Soviet cinema reframed the conventions of the American Western through collective memory, nostalgia, and masculinity." data-ru="Исследование того, как советское кино переосмыслило условности американского вестерна через коллективную память, ностальгию и маскулинность.">A study of how Soviet cinema reframed the conventions of the American Western through collective memory, nostalgia, and masculinity.</p>
+        <button type="button" class="project-more" data-project-toggle="dissertation" aria-expanded="false"><span class="mark"></span><span data-en="View project" data-ru="Смотреть проект">View project</span></button>
+        <div class="project-detail" hidden>
+          <button type="button" class="project-back" data-project-close><span aria-hidden="true">←</span><span data-en="Back to projects" data-ru="Назад к проектам">Back to projects</span></button>
+          <div class="project-detail-grid">
+            <figure class="project-feature-image">
+              <div class="image-slot expanded-image-slot"><img src="assets/images/at-home-among-strangers-a-stranger-among-his-own.jpg" alt="Nikita Mikhalkov, At Home Among Strangers, A Stranger Among His Own, 1974."></div>
+              <figcaption data-en="Thumbnail image: Nikita Mikhalkov, At Home Among Strangers, A Stranger Among His Own." data-ru="Изображение миниатюры: Никита Михалков, «Свой среди чужих, чужой среди своих».">Thumbnail image: Nikita Mikhalkov, At Home Among Strangers, A Stranger Among His Own.</figcaption>
+            </figure>
+            <div class="project-detail-copy">
+              <p class="project-award" data-en="Awarded Distinction" data-ru="Отмечена оценкой Distinction">Awarded Distinction</p>
+              <h4 data-en="“An Abundance of Mythologisation, Nostalgia, and Masculinity: The Eastern Genre in Soviet Cinema of the 1970s”" data-ru="«Избыток мифологизации, ностальгии и маскулинности: восточный жанр в советском кино 1970-х годов»">“An Abundance of Mythologisation, Nostalgia, and Masculinity: The Eastern Genre in Soviet Cinema of the 1970s”</h4>
+              <p data-en="The dissertation explored the evolution of the Soviet Eastern, a film genre that adapts and reframes the conventions of the American Western within a Soviet ideological framework. Through a focus on collective memory, nostalgia, and masculinity, it argues that, in the era of stagnation, Soviet identity became deeply rooted in representing the past as an instrument for interpreting the present. A visual analysis of film narratives demonstrates how the Eastern reflected and reinforced cultural tensions of the 1970s and offers a new perspective on the role of film in shaping and articulating Soviet identity." data-ru="Диссертация исследовала развитие советского истерна — жанра, который адаптирует и переосмысливает условности американского вестерна в рамках советской идеологии. Через темы коллективной памяти, ностальгии и маскулинности работа показывает, что в эпоху застоя советская идентичность глубоко укоренилась в представлении о прошлом как инструменте осмысления настоящего. Визуальный анализ киноповествований демонстрирует, как истерн отражал и усиливал культурные напряжения 1970-х годов, предлагая новый взгляд на роль кино в формировании и артикуляции советской идентичности.">The dissertation explored the evolution of the Soviet Eastern, a film genre that adapts and reframes the conventions of the American Western within a Soviet ideological framework. Through a focus on collective memory, nostalgia, and masculinity, it argues that, in the era of stagnation, Soviet identity became deeply rooted in representing the past as an instrument for interpreting the present. A visual analysis of film narratives demonstrates how the Eastern reflected and reinforced cultural tensions of the 1970s and offers a new perspective on the role of film in shaping and articulating Soviet identity.</p>
+              <div class="project-writeup" data-en="Full dissertation writeup coming soon." data-ru="Полный текст диссертации скоро появится.">Full dissertation writeup coming soon.</div>
+            </div>
+          </div>
+        </div>
       </article>
 
-      <article class="project-card">
-        <div class="project-thumb">
-          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-            <rect width="400" height="300" fill="#eae7df"/>
-            <polygon points="60,240 200,60 340,240" fill="none" stroke="#141414" stroke-width="6"/>
-            <rect x="180" y="150" width="40" height="40" fill="#c81e1e"/>
-          </svg>
+      <article class="project-card" id="migration-portfolio">
+        <div class="project-thumb image-slot">
+          <img src="assets/images/sleep-dealer.jpeg" alt="Alex Rivera, Sleep Dealer, 2008">
         </div>
-        <p class="project-tag"><span class="mark"></span><span data-en="Curatorial Proposal — [PLACEHOLDER YEAR]" data-ru="Кураторское предложение — [ГОД]">Curatorial Proposal — [PLACEHOLDER YEAR]</span></p>
-        <h3 data-en="[PLACEHOLDER — PROJECT TITLE]" data-ru="[НАЗВАНИЕ ПРОЕКТА]">[PLACEHOLDER — PROJECT TITLE]</h3>
-        <p data-en="[PLACEHOLDER — one to two sentence description of an exhibition concept, checklist, or gallery proposal you developed.]" data-ru="[МЕСТО ДЛЯ ОПИСАНИЯ — одно-два предложения о концепции выставки, списке произведений или предложении для галереи.]">[PLACEHOLDER — one to two sentence description of an exhibition concept, checklist, or gallery proposal you developed.]</p>
-        <a href="#" class="project-more"><span class="mark"></span><span data-en="View project" data-ru="Смотреть проект">View project</span></a>
-      </article>
-
-      <article class="project-card">
-        <div class="project-thumb">
-          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-            <rect width="400" height="300" fill="#eae7df"/>
-            <rect x="50" y="50" width="90" height="90" fill="#141414"/>
-            <rect x="160" y="50" width="90" height="90" fill="none" stroke="#141414" stroke-width="4"/>
-            <rect x="270" y="50" width="90" height="90" fill="#c81e1e"/>
-            <line x1="50" y1="200" x2="360" y2="200" stroke="#141414" stroke-width="2"/>
-            <line x1="50" y1="230" x2="360" y2="230" stroke="#141414" stroke-width="2"/>
-          </svg>
+        <p class="project-tag"><span class="mark"></span><span data-en="Migration Portfolio" data-ru="Портфолио о миграции">Migration Portfolio</span></p>
+        <h3 data-en="Reframing Migration" data-ru="Переосмысление миграции">Reframing Migration</h3>
+        <p data-en="Two essays placing contemporary visual materials in dialogue with histories and debates about migration." data-ru="Два эссе, сопоставляющие современные визуальные материалы с историей и дискуссиями о миграции.">Two essays placing contemporary visual materials in dialogue with histories and debates about migration.</p>
+        <button type="button" class="project-more" data-project-toggle="migration-portfolio" aria-expanded="false"><span class="mark"></span><span data-en="View project" data-ru="Смотреть проект">View project</span></button>
+        <div class="project-detail" hidden>
+          <button type="button" class="project-back" data-project-close><span aria-hidden="true">←</span><span data-en="Back to projects" data-ru="Назад к проектам">Back to projects</span></button>
+          <div class="project-detail-grid">
+            <figure class="project-feature-image">
+              <div class="image-slot expanded-image-slot"><img src="assets/images/sleep-dealer.jpeg" alt="Alex Rivera, Sleep Dealer, 2008"></div>
+              <figcaption data-en="Alex Rivera, Sleep Dealer, 2008" data-ru="Alex Rivera, Sleep Dealer, 2008">Alex Rivera, Sleep Dealer, 2008</figcaption>
+            </figure>
+            <div class="project-detail-copy">
+              <p class="project-award" data-en="Awarded Distinction" data-ru="Отмечено оценкой Distinction">Awarded Distinction</p>
+              <h4 data-en="“Reframing Migration: The U.S.-Mexico Border from Multiple Perspectives” and “Understanding the Contemporary through the Past: Zacheta National Gallery’s Perspective on Polish Migration”" data-ru="«Переосмысление миграции: граница США и Мексики с разных точек зрения» и «Понимание современности через прошлое: взгляд Национальной галереи Захента на польскую миграцию»">“Reframing Migration: The U.S.-Mexico Border from Multiple Perspectives” and “Understanding the Contemporary through the Past: Zacheta National Gallery’s Perspective on Polish Migration”</h4>
+              <p data-en="The two essays placed contemporary materials in dialogue with discourse about migration. The first examined five visual artefacts — artworks, everyday objects, photographs, activist graphics, films, and digital media — representing the U.S.-Mexico Border, arguing that borders are not only fixed or concrete technologies but can also be immaterial and conceptual. The second reflected on a recent exhibition at the Zacheta National Gallery that explicitly addressed migration." data-ru="Два эссе сопоставляли современные материалы с дискурсом о миграции. Первое рассматривало пять типов визуальных артефактов — произведения искусства, повседневные объекты, фотографии, активистскую графику, фильмы и цифровые медиа, — представляющих границу США и Мексики, и доказывало, что границы являются не только фиксированными или материальными технологиями, но также могут быть нематериальными и концептуальными. Второе эссе анализировало недавнюю выставку в Национальной галерее Захента, посвящённую миграции.">The two essays placed contemporary materials in dialogue with discourse about migration. The first examined five visual artefacts — artworks, everyday objects, photographs, activist graphics, films, and digital media — representing the U.S.-Mexico Border, arguing that borders are not only fixed or concrete technologies but can also be immaterial and conceptual. The second reflected on a recent exhibition at the Zacheta National Gallery that explicitly addressed migration.</p>
+              <div class="project-writeup" data-en="Full portfolio writeup coming soon." data-ru="Полный текст портфолио скоро появится.">Full portfolio writeup coming soon.</div>
+            </div>
+          </div>
         </div>
-        <p class="project-tag"><span class="mark"></span><span data-en="Conference Paper — [PLACEHOLDER YEAR]" data-ru="Доклад на конференции — [ГОД]">Conference Paper — [PLACEHOLDER YEAR]</span></p>
-        <h3 data-en="[PLACEHOLDER — PROJECT TITLE]" data-ru="[НАЗВАНИЕ ПРОЕКТА]">[PLACEHOLDER — PROJECT TITLE]</h3>
-        <p data-en="[PLACEHOLDER — one to two sentence description of the paper, where it was presented, and its central argument.]" data-ru="[МЕСТО ДЛЯ ОПИСАНИЯ — одно-два предложения о докладе, месте его презентации и его основном тезисе.]">[PLACEHOLDER — one to two sentence description of the paper, where it was presented, and its central argument.]</p>
-        <a href="#" class="project-more"><span class="mark"></span><span data-en="View project" data-ru="Смотреть проект">View project</span></a>
       </article>
 
     </div>

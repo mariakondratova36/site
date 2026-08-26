@@ -93,6 +93,60 @@
       if (link.getAttribute("href") === here) link.classList.add("current");
     });
 
+    // ---- Expandable project details ----
+    var projectGrid = document.querySelector(".project-grid");
+    if (projectGrid) {
+      var projectCards = projectGrid.querySelectorAll(".project-card");
+
+      function closeProject(updateHash) {
+        projectGrid.classList.remove("is-detail");
+        projectCards.forEach(function (card) {
+          card.classList.remove("is-expanded");
+          var detail = card.querySelector(".project-detail");
+          var button = card.querySelector("[data-project-toggle]");
+          if (detail) detail.hidden = true;
+          if (button) button.setAttribute("aria-expanded", "false");
+        });
+        if (updateHash) history.replaceState(null, "", location.pathname + location.search);
+      }
+
+      function openProject(id, updateHash) {
+        var selected = document.getElementById(id);
+        if (!selected || !selected.closest(".project-grid")) return;
+
+        projectGrid.classList.add("is-detail");
+        projectCards.forEach(function (card) {
+          var isSelected = card === selected;
+          card.classList.toggle("is-expanded", isSelected);
+          var detail = card.querySelector(".project-detail");
+          var button = card.querySelector("[data-project-toggle]");
+          if (detail) detail.hidden = !isSelected;
+          if (button) button.setAttribute("aria-expanded", isSelected ? "true" : "false");
+        });
+        if (updateHash) history.pushState(null, "", "#" + id);
+        selected.scrollIntoView({ block: "start" });
+      }
+
+      projectGrid.querySelectorAll("[data-project-toggle]").forEach(function (button) {
+        button.addEventListener("click", function () {
+          openProject(button.getAttribute("data-project-toggle"), true);
+        });
+      });
+
+      projectGrid.querySelectorAll("[data-project-close]").forEach(function (button) {
+        button.addEventListener("click", function () {
+          closeProject(true);
+        });
+      });
+
+      window.addEventListener("hashchange", function () {
+        if (location.hash) openProject(location.hash.slice(1), false);
+        else closeProject(false);
+      });
+
+      if (location.hash) openProject(location.hash.slice(1), false);
+    }
+
     // ---- Language: apply stored preference, wire up toggle ----
     var lang = getStoredLang() === "ru" ? "ru" : "en";
     applyLanguage(lang);

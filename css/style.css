@@ -434,7 +434,7 @@ h1.page-title {
   margin-top: 64px;
   display: flex;
   gap: 48px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   padding-top: 32px;
   border-top: 1px solid var(--line);
   max-width: 900px;
@@ -444,7 +444,12 @@ h1.page-title {
   font-family: var(--font-meta);
   font-size: 12px;
   color: var(--grey);
-  max-width: 30ch;
+  min-width: 0;
+  flex: 1;
+}
+
+.education-meta {
+  flex: 1.4;
 }
 
 .hero-meta-item strong {
@@ -470,8 +475,8 @@ h1.page-title {
   padding: 40px 0;
   border-top: 1px solid var(--line);
   display: grid;
-  grid-template-columns: minmax(0, 220px) 1fr;
-  gap: 32px;
+  grid-template-columns: minmax(0, 200px) 1fr;
+  gap: 24px;
 }
 
 .experience-item:last-child {
@@ -549,6 +554,29 @@ h1.page-title {
   background: #eae7df;
 }
 
+.image-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  color: var(--grey);
+  font-family: var(--font-meta);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.project-thumb.image-slot {
+  border: 1px dashed var(--line);
+}
+
+.image-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .project-thumb svg {
   width: 100%;
   height: 100%;
@@ -584,6 +612,11 @@ h1.page-title {
 }
 
 .project-card .project-more {
+  border: 0;
+  padding: 0;
+  color: var(--ink);
+  background: none;
+  cursor: pointer;
   margin-top: 18px;
   font-family: var(--font-meta);
   font-size: 12px;
@@ -606,6 +639,125 @@ h1.page-title {
 .project-card .project-more .mark {
   opacity: 0;
   transform: rotate(45deg);
+}
+
+.project-grid.is-detail .project-card:not(.is-expanded) {
+  display: none;
+}
+
+.project-grid.is-detail .project-card.is-expanded {
+  grid-column: 1 / -1;
+}
+
+.project-card.is-expanded > .project-thumb,
+.project-card.is-expanded > .project-tag,
+.project-card.is-expanded > h3,
+.project-card.is-expanded > p,
+.project-card.is-expanded > .project-more {
+  display: none;
+}
+
+.project-detail {
+  padding-top: 4px;
+}
+
+.project-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 32px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--grey);
+  cursor: pointer;
+  font-family: var(--font-meta);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.project-back span:first-child {
+  color: var(--accent);
+  font-size: 22px;
+  line-height: 0.8;
+}
+
+.project-back:hover {
+  color: var(--accent);
+}
+
+.project-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.9fr) minmax(0, 1.1fr);
+  gap: 48px;
+}
+
+.project-feature-image {
+  margin: 0;
+}
+
+.expanded-image-slot {
+  min-height: 320px;
+  border: 1px dashed var(--line);
+  background: #eae7df;
+}
+
+.expanded-image-slot img {
+  object-fit: contain;
+}
+
+.project-feature-image figcaption,
+.project-citation {
+  color: var(--grey);
+  font-family: var(--font-meta);
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  line-height: 1.6;
+}
+
+.project-feature-image figcaption {
+  margin-top: 12px;
+}
+
+.project-detail-copy h4 {
+  margin: 0 0 18px;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.project-detail-copy > p:not(.project-award):not(.project-citation) {
+  max-width: 68ch;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.project-award {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-family: var(--font-meta);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-citation {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.project-writeup {
+  margin-top: 24px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  color: var(--grey);
+  font-family: var(--font-meta);
+  font-size: 12px;
+  letter-spacing: 0.04em;
 }
 
 /* ---------------------------------------------------------
@@ -840,8 +992,27 @@ h1.page-title {
     gap: 10px;
   }
 
+  .hero-meta {
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item,
+  .education-meta {
+    flex: initial;
+    max-width: 30ch;
+  }
+
   .project-grid {
     grid-template-columns: 1fr;
+  }
+
+  .project-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .expanded-image-slot {
+    min-height: 240px;
   }
 }
 
