@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>
+  // Apply a stored language choice before first paint, so the correct
+  // font stack is active immediately (avoids a flash of the wrong font).
+  (function () {
+    try {
+      var l = localStorage.getItem('site-lang');
+      if (l === 'ru') document.documentElement.setAttribute('lang', 'ru');
+    } catch (e) {}
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — [PLACEHOLDER — YOUR NAME]</title>
+<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-title-en="Projects — [PLACEHOLDER — YOUR NAME]" data-title-ru="Проекты — [PLACEHOLDER — ВАШЕ ИМЯ]">
+
+<div class="shell">
+
+  <header class="sidebar">
+    <div class="topbar">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="sidebar-top">
+      <a href="index.html" class="site-name">[PLACEHOLDER NAME]</a>
+      <nav class="primary-nav">
+        <a href="experience.html" class="nav-link" data-en="Experience" data-ru="Опыт">
+          <span class="mark"></span>
+          <span class="nav-label-primary"></span>
+          <span class="nav-reveal"><span class="nav-sep">/</span><span class="nav-label-secondary"></span></span>
+        </a>
+        <a href="projects.html" class="nav-link" data-en="Projects" data-ru="Проекты">
+          <span class="mark"></span>
+          <span class="nav-label-primary"></span>
+          <span class="nav-reveal"><span class="nav-sep">/</span><span class="nav-label-secondary"></span></span>
+        </a>
+        <a href="resume.html" class="nav-link" data-en="Resume" data-ru="Резюме">
+          <span class="mark"></span>
+          <span class="nav-label-primary"></span>
+          <span class="nav-reveal"><span class="nav-sep">/</span><span class="nav-label-secondary"></span></span>
+        </a>
+        <a href="contact.html" class="nav-link" data-en="Contact" data-ru="Связаться">
+          <span class="mark"></span>
+          <span class="nav-label-primary"></span>
+          <span class="nav-reveal"><span class="nav-sep">/</span><span class="nav-label-secondary"></span></span>
+        </a>
+      </nav>
+
+      <div class="lang-toggle" role="group" aria-label="Language / Язык">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <span class="lang-toggle-sep">/</span>
+        <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      <span data-en="Based in London, UK" data-ru="Живёт в Лондоне, Великобритания">Based in London, UK</span>
+      <div class="footer-links">
+        <a href="contact.html">[PLACEHOLDER@EMAIL.COM]</a>
+        <a href="#" data-en="LinkedIn — [PLACEHOLDER]" data-ru="LinkedIn — [ССЫЛКА]">LinkedIn — [PLACEHOLDER]</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <p class="eyebrow"><span class="mark"></span><span data-en="02 — Projects" data-ru="02 — Проекты">02 — Projects</span></p>
+      <h1 class="page-title">
+        <span class="lang-en">Projects</span>
+        <span class="lang-ru" lang="ru">Проекты</span>
+      </h1>
+      <p class="page-intro" data-en="Research and coursework from the MA, plus independent writing. Swap the placeholder thumbnails for your own installation shots, essay covers, or archival material." data-ru="Исследования и работы времх1 магистратуры, а также самостоятельные тексты. Замените изображения-заглушки на фотографии инсталляций, обложки эссе или архивные материалы.">Research and coursework from the MA, plus independent writing. Swap the placeholder thumbnails for your own installation shots, essay covers, or archival material.</p>
+    </div>
+
+    <div class="project-grid">
+
+      <article class="project-card">
+        <div class="project-thumb">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="300" fill="#eae7df"/>
+            <rect x="40" y="40" width="140" height="220" fill="#141414"/>
+            <rect x="200" y="60" width="160" height="16" fill="#c81e1e"/>
+            <circle cx="280" cy="180" r="60" fill="none" stroke="#141414" stroke-width="6"/>
+            <line x1="40" y1="260" x2="360" y2="40" stroke="#141414" stroke-width="2"/>
+          </svg>
+        </div>
+        <p class="project-tag"><span class="mark"></span><span data-en="MA Research Essay — [PLACEHOLDER YEAR]" data-ru="Исследовательское эссе (магистратура) — [ГОД]">MA Research Essay — [PLACEHOLDER YEAR]</span></p>
+        <h3 data-en="[PLACEHOLDER — PROJECT TITLE]" data-ru="[НАЗВАНИЕ ПРОЕКТА]">[PLACEHOLDER — PROJECT TITLE]</h3>
+        <p data-en="[PLACEHOLDER — one to two sentence description of the project, its scope, and any institution or archive involved.]" data-ru="[МЕСТО ДЛЯ ОПИСАНИЯ — одно-два предложения о проекте, его охвате и учреждении или архиве, если они были задействованы.]">[PLACEHOLDER — one to two sentence description of the project, its scope, and any institution or archive involved.]</p>
+        <a href="#" class="project-more"><span class="mark"></span><span data-en="View project" data-ru="Смотреть проект">View project</span></a>
+      </article>
+
+      <article class="project-card">
+        <div class="project-thumb">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="300" fill="#eae7df"/>
+            <rect x="60" y="220" width="280" height="14" fill="#141414"/>
+            <rect x="60" y="180" width="200" height="14" fill="#141414"/>
+            <rect x="60" y="140" width="120" height="14" fill="#c81e1e"/>
+            <rect x="290" y="60" width="60" height="60" fill="#141414" transform="rotate(45 320 90)"/>
+          </svg>
+        </div>
+        <p class="project-tag"><span class="mark"></span><span data-en="Dissertation Chapter — [PLACEHOLDER YEAR]" data-ru="Глава диссертации — [ГОД]">Dissertation Chapter — [PLACEHOLDER YEAR]</span></p>
+        <h3 data-en="[PLACEHOLDER — PROJECT TITLE]" data-ru="[НАЗВАНИЕ ПРОЕКТА]">[PLACEHOLDER — PROJECT TITLE]</h3>
+        <p data-en="[PLACEHOLDER — one to two sentence description, e.g. close reading of a specific artist, exhibition, or publication.]" data-ru="[МЕСТО ДЛЯ ОПИСАНИЯ — одно-два предложения, например близкое рассмотрение творчества отдельного художника, выставки или публикации.]">[PLACEHOLDER — one to two sentence description, e.g. close reading of a specific artist, exhibition, or publication.]</p>
+        <a href="#" class="project-more"><span class="mark"></span><span data-en="View project" data-ru="Смотреть проект">View project</span></a>
+      </article>
+
+      <article class="project-card">
+        <div class="project-thumb">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="300" fill="#eae7df"/>
+            <polygon points="60,240 200,60 340,240" fill="none" stroke="#141414" stroke-width="6"/>
+            <rect x="180" y="150" width="40" height="40" fill="#c81e1e"/>
+          </svg>
+        </div>
+        <p class="project-tag"><span class="mark"></span><span data-en="Curatorial Proposal — [PLACEHOLDER YEAR]" data-ru="Кураторское предложение — [ГОД]">Curatorial Proposal — [PLACEHOLDER YEAR]</span></p>
+        <h3 data-en="[PLACEHOLDER — PROJECT TITLE]" data-ru="[НАЗВАНИЕ ПРОЕКТА]">[PLACEHOLDER — PROJECT TITLE]</h3>
+        <p data-en="[PLACEHOLDER — one to two sentence description of an exhibition concept, checklist, or gallery proposal you developed.]" data-ru="[МЕСТО ДЛЯ ОПИСАНИЯ — одно-два предложения о концепции выставки, списке произведений или предложении для галереи.]">[PLACEHOLDER — one to two sentence description of an exhibition concept, checklist, or gallery proposal you developed.]</p>
+        <a href="#" class="project-more"><span class="mark"></span><span data-en="View project" data-ru="Смотреть проект">View project</span></a>
+      </article>
+
+      <article class="project-card">
+        <div class="project-thumb">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="300" fill="#eae7df"/>
+            <rect x="50" y="50" width="90" height="90" fill="#141414"/>
+            <rect x="160" y="50" width="90" height="90" fill="none" stroke="#141414" stroke-width="4"/>
+            <rect x="270" y="50" width="90" height="90" fill="#c81e1e"/>
+            <line x1="50" y1="200" x2="360" y2="200" stroke="#141414" stroke-width="2"/>
+            <line x1="50" y1="230" x2="360" y2="230" stroke="#141414" stroke-width="2"/>
+          </svg>
+        </div>
+        <p class="project-tag"><span class="mark"></span><span data-en="Conference Paper — [PLACEHOLDER YEAR]" data-ru="Доклад на конференции — [ГОД]">Conference Paper — [PLACEHOLDER YEAR]</span></p>
+        <h3 data-en="[PLACEHOLDER — PROJECT TITLE]" data-ru="[НАЗВАНИЕ ПРОЕКТА]">[PLACEHOLDER — PROJECT TITLE]</h3>
+        <p data-en="[PLACEHOLDER — one to two sentence description of the paper, where it was presented, and its central argument.]" data-ru="[МЕСТО ДЛЯ ОПИСАНИЯ — одно-два предложения о докладе, месте его презентации и его основном тезисе.]">[PLACEHOLDER — one to two sentence description of the paper, where it was presented, and its central argument.]</p>
+        <a href="#" class="project-more"><span class="mark"></span><span data-en="View project" data-ru="Смотреть проект">View project</span></a>
+      </article>
+
+    </div>
+
+    <p class="page-footer"><span data-en="Thumbnails are original placeholder compositions — replace" data-ru="Изображения — оригинальные композиции-заглушки — замените содержимое">Thumbnails are original placeholder compositions — replace</span> <code>.project-thumb</code> <span data-en="contents with your own images (e.g." data-ru="на свои изображения (например,">contents with your own images (e.g.</span> <code>&lt;img src="assets/images/project-1.jpg" alt="..."&gt;</code><span data-en="." data-ru=").">.</span></p>
+  </main>
+
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

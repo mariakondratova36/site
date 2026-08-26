@@ -1,0 +1,849 @@
+/* =========================================================
+   PORTFOLIO — BARBICAN / FUTURA-INSPIRED STYLE SYSTEM
+   ---------------------------------------------------------
+   Palette
+     --bg      paper white   #F4F2ED
+     --ink     near black    #141414
+     --grey    muted text    #6E6E6E
+     --line    hairline rule #D8D5CC
+     --accent  signature red #C81E1E   (Malevich / Rodchenko nod)
+   Type
+     Display + nav: Futura, uppercase, tracked out
+     Body: Futura, sentence case
+     Meta/labels: monospace, small caps-ish, archival wall-label feel
+   ========================================================= */
+
+/* ---- Futura local font-face hooks -----------------------
+   If you have Futura font files, drop them into /fonts using
+   these exact names and they will be picked up automatically.
+   Without them, the fallback stack (Century Gothic / Avenir
+   Next) approximates Futura closely — no installation required.
+   See /fonts/README.md for details.
+------------------------------------------------------------ */
+@font-face {
+  font-family: "Futura";
+  src: url("../fonts/futura-book.woff2") format("woff2"),
+       url("../fonts/futura-book.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Futura";
+  src: url("../fonts/futura-medium.woff2") format("woff2"),
+       url("../fonts/futura-medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Futura";
+  src: url("../fonts/futura-bold.woff2") format("woff2"),
+       url("../fonts/futura-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg: #f4f2ed;
+  --ink: #141414;
+  --grey: #6e6e6e;
+  --line: #d8d5cc;
+  --accent: #c81e1e;
+
+  --font-display: "Futura", "Century Gothic", "Avenir Next", "Segoe UI", sans-serif;
+  --font-body: "Futura", "Century Gothic", "Avenir Next", "Segoe UI", sans-serif;
+  --font-meta: "Futura", ui-monospace, "SFMono-Regular", "Courier New", monospace;
+
+  /* Futura has no native Cyrillic glyphs (Futura PT from ParaType does, if
+     you own it — drop it in alongside the Latin weights and it's picked up
+     automatically). Otherwise these fall back to geometric sans faces with
+     solid Cyrillic support, so Russian text still reads cleanly. */
+  --font-display-ru: "Futura PT", "PT Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-body-ru: "Futura PT", "PT Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-meta-ru: "Futura PT", "PT Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+  --sidebar-w: 260px;
+  --gutter: clamp(24px, 5vw, 64px);
+}
+
+/* When the page (or a specific element, e.g. a hover-revealed word) is
+   Russian, swap the active font stack to one with real Cyrillic support. */
+html[lang="ru"] {
+  --font-display: var(--font-display-ru);
+  --font-body: var(--font-body-ru);
+  --font-meta: var(--font-meta-ru);
+}
+
+[lang="ru"] {
+  font-family: var(--font-display-ru);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.55;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* focus visibility, kept even though the palette is quiet */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ---------------------------------------------------------
+   Signature mark — the single red square used throughout,
+   a nod to Malevich's Red Square (1915) and the Constructivist
+   vocabulary of the subject matter. Used sparingly.
+------------------------------------------------------------ */
+.mark {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  flex: none;
+  transform: rotate(0deg);
+  transition: transform 0.35s ease;
+}
+
+/* ---------------------------------------------------------
+   Layout shell
+------------------------------------------------------------ */
+.shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ---- Sidebar / nav ---- */
+.sidebar {
+  width: var(--sidebar-w);
+  flex: none;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: var(--gutter) 0 var(--gutter) var(--gutter);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid var(--line);
+}
+
+.site-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+.site-name:hover {
+  color: var(--accent);
+}
+
+.primary-nav {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.primary-nav a {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 4px 0;
+  width: fit-content;
+}
+
+.primary-nav a .mark {
+  opacity: 0;
+  transform: rotate(0deg);
+  align-self: center;
+}
+
+.primary-nav a:hover .mark,
+.primary-nav a.current .mark {
+  opacity: 1;
+  transform: rotate(45deg);
+}
+
+.primary-nav a:hover,
+.primary-nav a.current {
+  color: var(--accent);
+}
+
+/* Hover reveal: the translated word is always in the DOM, clipped to zero
+   width. Growing max-width on hover uncovers it left-to-right, like a wipe —
+   "CONTACT" becomes "CONTACT / связаться" (or the reverse in Russian mode). */
+.nav-reveal {
+  display: inline-block;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: baseline;
+  transition: max-width 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.primary-nav a:hover .nav-reveal,
+.primary-nav a:focus-visible .nav-reveal {
+  max-width: 280px;
+}
+
+.nav-reveal .nav-sep {
+  opacity: 0.45;
+  padding: 0 2px;
+}
+
+/* ---- Language toggle ---- */
+.lang-toggle {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang-toggle button {
+  font-family: var(--font-meta);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  padding: 3px 0;
+  color: var(--grey);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.lang-toggle button:hover {
+  color: var(--accent);
+}
+
+.lang-toggle button.active {
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+}
+
+.lang-toggle .lang-toggle-sep {
+  color: var(--line);
+  font-family: var(--font-meta);
+  font-size: 12px;
+}
+
+/* ---------------------------------------------------------
+   Bilingual page titles — English set, Russian underneath
+   in a lighter weight, always shown together regardless of
+   the language toggle state.
+------------------------------------------------------------ */
+.page-title .lang-en {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(34px, 5vw, 56px);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+
+.page-title .lang-ru {
+  display: block;
+  font-family: var(--font-display-ru);
+  font-weight: 400;
+  font-size: clamp(17px, 2.4vw, 26px);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: var(--grey);
+  margin-top: 8px;
+}
+
+h1.page-title {
+  margin: 0 0 20px;
+}
+
+/* Compact variant used for the home-page kicker line */
+.hero-eyebrow .eyebrow-text {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-eyebrow .lang-en {
+  font-family: var(--font-meta);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+
+.hero-eyebrow .lang-ru {
+  font-family: var(--font-display-ru);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  color: var(--grey);
+  opacity: 0.75;
+}
+
+.sidebar-footer {
+  font-family: var(--font-meta);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--grey);
+  padding-right: var(--gutter);
+}
+
+.sidebar-footer .footer-links {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sidebar-footer a:hover {
+  color: var(--accent);
+}
+
+/* ---- Mobile top bar ---- */
+.topbar {
+  display: none;
+}
+
+/* ---- Main content ---- */
+main {
+  flex: 1;
+  min-width: 0;
+  padding: var(--gutter);
+  padding-bottom: 96px;
+}
+
+.page-header {
+  margin-bottom: 56px;
+  max-width: 720px;
+}
+
+.eyebrow {
+  font-family: var(--font-meta);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grey);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+h1.page-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(34px, 5vw, 56px);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  line-height: 1.05;
+  margin: 0 0 20px;
+}
+
+.page-intro {
+  font-size: 17px;
+  color: var(--grey);
+  max-width: 56ch;
+}
+
+/* ---------------------------------------------------------
+   HOME
+------------------------------------------------------------ */
+.hero {
+  max-width: 900px;
+  margin-top: 8vh;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-meta);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-statement {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(28px, 4.2vw, 46px);
+  line-height: 1.28;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+}
+
+.hero-statement .line {
+  display: block;
+}
+
+.hero-statement .line.accent {
+  color: var(--accent);
+}
+
+.hero-meta {
+  margin-top: 64px;
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+  max-width: 900px;
+}
+
+.hero-meta-item {
+  font-family: var(--font-meta);
+  font-size: 12px;
+  color: var(--grey);
+  max-width: 30ch;
+}
+
+.hero-meta-item strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--ink);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+/* ---------------------------------------------------------
+   EXPERIENCE — three title / content boxes
+------------------------------------------------------------ */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-item {
+  padding: 40px 0;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(0, 220px) 1fr;
+  gap: 32px;
+}
+
+.experience-item:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.experience-when {
+  font-family: var(--font-meta);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--grey);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.experience-body h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0 0 6px;
+}
+
+.experience-role {
+  font-family: var(--font-meta);
+  font-size: 12px;
+  color: var(--grey);
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.experience-body p {
+  max-width: 62ch;
+  margin: 0;
+  font-size: 15.5px;
+}
+
+/* ---------------------------------------------------------
+   PROJECTS
+------------------------------------------------------------ */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.project-card {
+  background: var(--bg);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 22px;
+  overflow: hidden;
+  background: #eae7df;
+}
+
+.project-thumb svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.project-tag {
+  font-family: var(--font-meta);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.project-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+
+.project-card p {
+  font-size: 15px;
+  color: var(--ink);
+  margin: 0;
+  flex: 1;
+}
+
+.project-card .project-more {
+  margin-top: 18px;
+  font-family: var(--font-meta);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+}
+
+.project-card .project-more:hover {
+  color: var(--accent);
+}
+
+.project-card .project-more:hover .mark {
+  opacity: 1;
+}
+
+.project-card .project-more .mark {
+  opacity: 0;
+  transform: rotate(45deg);
+}
+
+/* ---------------------------------------------------------
+   RESUME
+------------------------------------------------------------ */
+.resume-frame-wrap {
+  border: 1px solid var(--line);
+  background: #eae7df;
+  aspect-ratio: 8.5 / 11;
+  max-width: 640px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.resume-frame-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.resume-placeholder {
+  text-align: center;
+  padding: 40px;
+  font-family: var(--font-meta);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--grey);
+  max-width: 40ch;
+}
+
+.resume-placeholder .mark {
+  margin: 0 auto 18px;
+}
+
+.resume-actions {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--ink);
+  padding: 14px 26px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.btn:hover .mark {
+  background: var(--accent);
+}
+
+.text-link {
+  font-family: var(--font-meta);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+}
+
+.text-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ---------------------------------------------------------
+   CONTACT
+------------------------------------------------------------ */
+.contact-block {
+  max-width: 640px;
+}
+
+.contact-email {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(24px, 4vw, 36px);
+  letter-spacing: 0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: 40px;
+  word-break: break-word;
+}
+
+.contact-email:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.contact-email:hover .mark {
+  transform: rotate(45deg);
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  font-size: 15px;
+}
+
+.contact-list li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-list span.label {
+  font-family: var(--font-meta);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--grey);
+  width: 110px;
+  flex: none;
+}
+
+/* ---------------------------------------------------------
+   Footer note used on inner pages
+------------------------------------------------------------ */
+.page-footer {
+  margin-top: 96px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-meta);
+  font-size: 11px;
+  color: var(--grey);
+  letter-spacing: 0.04em;
+}
+
+/* ---------------------------------------------------------
+   Responsive
+------------------------------------------------------------ */
+@media (max-width: 900px) {
+  .shell {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 20px var(--gutter);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .sidebar-top {
+    order: 1;
+    flex: 1;
+  }
+
+  .topbar {
+    order: 2;
+  }
+
+  .site-name {
+    font-size: 17px;
+  }
+
+  .primary-nav {
+    margin-top: 0;
+    flex-direction: row;
+    gap: 22px;
+    flex-wrap: wrap;
+    display: none;
+  }
+
+  .primary-nav.open {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 24px;
+    gap: 16px;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .topbar {
+    display: block;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  .nav-toggle span {
+    width: 22px;
+    height: 2px;
+    background: var(--ink);
+  }
+
+  .experience-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --gutter: 20px;
+  }
+
+  .hero-meta {
+    gap: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

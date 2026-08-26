@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>
+  // Apply a stored language choice before first paint, so the correct
+  // font stack is active immediately (avoids a flash of the wrong font).
+  (function () {
+    try {
+      var l = localStorage.getItem('site-lang');
+      if (l === 'ru') document.documentElement.setAttribute('lang', 'ru');
+    } catch (e) {}
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[PLACEHOLDER — YOUR NAME]</title>
+<meta name="description" content="Art historian specialising in Soviet Avant-Garde art. Portfolio, experience, and research.">
+<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-title-en="[PLACEHOLDER — YOUR NAME]" data-title-ru="[PLACEHOLDER — ВАШЕ ИМЯ]">
+
+<div class="shell">
+
+  <header class="sidebar">
+    <div class="topbar">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="sidebar-top">
+      <a href="index.html" class="site-name">[PLACEHOLDER NAME]</a>
+      <nav class="primary-nav">
+        <a href="experience.html" class="nav-link" data-en="Experience" data-ru="Опыт">
+          <span class="mark"></span>
+          <span class="nav-label-primary"></span>
+          <span class="nav-reveal"><span class="nav-sep">/</span><span class="nav-label-secondary"></span></span>
+        </a>
+        <a href="projects.html" class="nav-link" data-en="Projects" data-ru="Проекты">
+          <span class="mark"></span>
+          <span class="nav-label-primary"></span>
+          <span class="nav-reveal"><span class="nav-sep">/</span><span class="nav-label-secondary"></span></span>
+        </a>
+        <a href="resume.html" class="nav-link" data-en="Resume" data-ru="Резюме">
+          <span class="mark"></span>
+          <span class="nav-label-primary"></span>
+          <span class="nav-reveal"><span class="nav-sep">/</span><span class="nav-label-secondary"></span></span>
+        </a>
+        <a href="contact.html" class="nav-link" data-en="Contact" data-ru="Связаться">
+          <span class="mark"></span>
+          <span class="nav-label-primary"></span>
+          <span class="nav-reveal"><span class="nav-sep">/</span><span class="nav-label-secondary"></span></span>
+        </a>
+      </nav>
+
+      <div class="lang-toggle" role="group" aria-label="Language / Язык">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <span class="lang-toggle-sep">/</span>
+        <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      <span data-en="Based in London, UK" data-ru="Живёт в Лондоне, Великобритания">Based in London, UK</span>
+      <div class="footer-links">
+        <a href="contact.html">[PLACEHOLDER@EMAIL.COM]</a>
+        <a href="#" data-en="LinkedIn — [PLACEHOLDER]" data-ru="LinkedIn — [ССЫЛКА]">LinkedIn — [PLACEHOLDER]</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="hero-eyebrow">
+        <span class="mark"></span>
+        <span class="eyebrow-text">
+          <span class="lang-en">Art Historian — Soviet Avant-Garde, 1913–1934</span>
+          <span class="lang-ru" lang="ru">Искусствовед — советский авангард, 1913–1934</span>
+        </span>
+      </p>
+
+      <p class="hero-statement">
+        <span class="line" data-en="This research is about construction." data-ru="Это исследование — о конструкции.">This research is about construction.</span>
+        <span class="line" data-en="This research is about the collective over the individual." data-ru="Это исследование — о коллективном начале, а не индивидуальном.">This research is about the collective over the individual.</span>
+        <span class="line accent" data-en="This research is about utopia, built and unbuilt." data-ru="Это исследование — об утопии, воплощённой и нет.">This research is about utopia, built and unbuilt.</span>
+        <span class="line" data-en="This research is about the printed page as a weapon." data-ru="Это исследование — о печатной странице как оружии.">This research is about the printed page as a weapon.</span>
+        <span class="line" data-en="This research is about the line, after Rodchenko." data-ru="Это исследование — о линии, вслед за Родченко.">This research is about the line, after Rodchenko.</span>
+        <span class="line" data-en="This research is about the museum as an archive of belief." data-ru="Это исследование — о музее как архиве веры.">This research is about the museum as an archive of belief.</span>
+        <span class="line" data-en="This research is about looking again." data-ru="Это исследование — о том, чтобы смотреть снова.">This research is about looking again.</span>
+      </p>
+
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <strong data-en="Focus" data-ru="Направление">Focus</strong>
+          <span data-en="Constructivism, Suprematism, and Productivism — from the 1915 “0.10” exhibition to the Socialist Realist turn of the 1930s." data-ru="Конструктивизм, супрематизм и производственное искусство — от выставки «0,10» 1915 года до поворота к соцреализму в 1930-х.">Constructivism, Suprematism, and Productivism — from the 1915 “0.10” exhibition to the Socialist Realist turn of the 1930s.</span>
+        </div>
+        <div class="hero-meta-item">
+          <strong data-en="Background" data-ru="Образование">Background</strong>
+          <span data-en="BA Film Studies, [PLACEHOLDER UNIVERSITY] · MA Art History, [PLACEHOLDER UNIVERSITY]" data-ru="Бакалавриат по киноведению, [МЕСТО ДЛЯ УНИВЕРСИТЕТА] · Магистратура по истории искусств, [МЕСТО ДЛЯ УНИВЕРСИТЕТА]">BA Film Studies, [PLACEHOLDER UNIVERSITY] · MA Art History, [PLACEHOLDER UNIVERSITY]</span>
+        </div>
+        <div class="hero-meta-item">
+          <strong data-en="Interested in" data-ru="Интересует">Interested in</strong>
+          <span data-en="Curatorial practice, art education, and provenance / sourcing work with London institutions." data-ru="Кураторская практика, арт-образование и работа с провенансом / поиском произведений для лондонских институций.">Curatorial practice, art education, and provenance / sourcing work with London institutions.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
