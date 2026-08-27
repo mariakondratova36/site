@@ -430,6 +430,14 @@ h1.page-title {
   color: var(--accent);
 }
 
+.hero-blurb {
+  max-width: 66ch;
+  margin: 34px 0 0;
+  font-size: 19px;
+  line-height: 1.55;
+  text-align: left;
+}
+
 .hero-meta {
   margin-top: 64px;
   display: flex;
@@ -448,8 +456,17 @@ h1.page-title {
   flex: 1;
 }
 
+.interests-meta {
+  order: 1;
+}
+
+.focus-meta {
+  order: 2;
+}
+
 .education-meta {
   flex: 1.4;
+  order: 3;
 }
 
 .hero-meta-item strong {
@@ -461,6 +478,22 @@ h1.page-title {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 6px;
+}
+
+.interest-primary,
+.interest-secondary {
+  display: block;
+}
+
+.interest-primary {
+  color: inherit;
+  font: inherit;
+}
+
+.interest-secondary {
+  margin-top: 10px;
+  font-size: 11px;
+  opacity: 0.68;
 }
 
 /* ---------------------------------------------------------
