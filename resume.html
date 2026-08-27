@@ -76,24 +76,23 @@
         <span class="lang-en">Resume</span>
         <span class="lang-ru" lang="ru">Резюме</span>
       </h1>
-      <p class="page-intro"><span data-en="Add your resume as" data-ru="Добавьте своё резюме по пути">Add your resume as</span> <code>assets/resume/resume.pdf</code> <span data-en="and it will appear below automatically, with a download link." data-ru="и оно автоматически появится ниже, вместе со ссылкой для скачивания.">and it will appear below automatically, with a download link.</span></p>
+      <p class="page-intro"><span data-en="Your resume is available below, with a download link." data-ru="Ваше резюме доступно ниже вместе со ссылкой для скачивания.">Your resume is available below, with a download link.</span></p>
     </div>
 
     <div class="resume-frame-wrap" id="resume-frame-wrap">
       <div class="resume-placeholder" id="resume-placeholder">
         <span class="mark" style="display:block;width:14px;height:14px;"></span>
         <span data-en="[PLACEHOLDER]" data-ru="[PLACEHOLDER]">[PLACEHOLDER]</span><br>
-        <span data-en="Add your PDF at" data-ru="Добавьте ваш PDF по пути">Add your PDF at</span><br>
-        <code>assets/resume/resume.pdf</code>
+        <span data-en="Resume preview unavailable." data-ru="Предварительный просмотр резюме недоступен.">Resume preview unavailable.</span>
       </div>
-      <iframe id="resume-iframe" src="assets/resume/resume.pdf" title="Resume" style="display:none;"></iframe>
+      <iframe id="resume-iframe" src="assets/resume/General%20CV%2C%20Maria%20Kondratova.pdf" title="Resume" style="display:none;"></iframe>
     </div>
 
     <div class="resume-actions">
-      <a class="btn" href="assets/resume/resume.pdf" download>
+      <a class="btn" href="assets/resume/General%20CV%2C%20Maria%20Kondratova.pdf" download>
         <span class="mark"></span><span data-en="Download PDF" data-ru="Скачать PDF">Download PDF</span>
       </a>
-      <a class="text-link" href="assets/resume/resume.pdf" target="_blank" rel="noopener" data-en="Open in new tab" data-ru="Открыть в новой вкладке">Open in new tab</a>
+      <a class="text-link" href="assets/resume/General%20CV%2C%20Maria%20Kondratova.pdf" target="_blank" rel="noopener" data-en="Open in new tab" data-ru="Открыть в новой вкладке">Open in new tab</a>
     </div>
   </main>
 
@@ -104,7 +103,7 @@
   // Quietly check whether resume.pdf actually exists before showing
   // the embed, so the placeholder is what renders until it's added.
   (function () {
-    var path = "assets/resume/resume.pdf";
+    var path = "assets/resume/General%20CV%2C%20Maria%20Kondratova.pdf";
     fetch(path, { method: "HEAD" })
       .then(function (res) {
         if (res.ok) {

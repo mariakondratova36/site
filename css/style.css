@@ -678,9 +678,11 @@ h1.page-title {
 }
 
 .project-back span:first-child {
+  display: inline-block;
+  transform: translateY(-3px);
   color: var(--accent);
   font-size: 22px;
-  line-height: 0.8;
+  line-height: 1;
 }
 
 .project-back:hover {
@@ -758,6 +760,28 @@ h1.page-title {
   font-family: var(--font-meta);
   font-size: 12px;
   letter-spacing: 0.04em;
+}
+
+.project-docs {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.project-doc-link {
+  color: var(--ink);
+  font-family: var(--font-meta);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+}
+
+.project-doc-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 /* ---------------------------------------------------------
