@@ -85,14 +85,14 @@
         <span data-en="[PLACEHOLDER]" data-ru="[PLACEHOLDER]">[PLACEHOLDER]</span><br>
         <span data-en="Resume preview unavailable." data-ru="Предварительный просмотр резюме недоступен.">Resume preview unavailable.</span>
       </div>
-      <iframe id="resume-iframe" src="assets/resume/General%20CV%2C%20Maria%20Kondratova.pdf" title="Resume" style="display:none;"></iframe>
+      <iframe id="resume-iframe" src="assets/resume/MashaResume_CV.pdf" title="Resume" style="display:none;"></iframe>
     </div>
 
     <div class="resume-actions">
-      <a class="btn" href="assets/resume/General%20CV%2C%20Maria%20Kondratova.pdf" download>
+      <a class="btn" href="assets/resume/MashaResume_CV.pdf" download>
         <span class="mark"></span><span data-en="Download PDF" data-ru="Скачать PDF">Download PDF</span>
       </a>
-      <a class="text-link" href="assets/resume/General%20CV%2C%20Maria%20Kondratova.pdf" target="_blank" rel="noopener" data-en="Open in new tab" data-ru="Открыть в новой вкладке">Open in new tab</a>
+      <a class="text-link" href="assets/resume/MashaResume_CV.pdf" target="_blank" rel="noopener" data-en="Open in new tab" data-ru="Открыть в новой вкладке">Open in new tab</a>
     </div>
   </main>
 
@@ -103,7 +103,7 @@
   // Quietly check whether resume.pdf actually exists before showing
   // the embed, so the placeholder is what renders until it's added.
   (function () {
-    var path = "assets/resume/General%20CV%2C%20Maria%20Kondratova.pdf";
+    var path = "assets/resume/MashaResume_CV.pdf";
     fetch(path, { method: "HEAD" })
       .then(function (res) {
         if (res.ok) {
