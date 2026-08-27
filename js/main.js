@@ -7,9 +7,8 @@
 //     attributes. Its rendered text always matches data-en on
 //     first paint (so the page is correct with JS disabled),
 //     then gets swapped in place when the language changes.
-//   - Nav links are a special case: they show the *current*
-//     language plainly, and reveal the *other* language on
-//     hover/focus (see .nav-reveal in css/style.css).
+//   - Navigation, page headings, and body copy all show only the
+//     currently selected language.
 //   - The choice persists via localStorage under "site-lang"
 //     so it carries across pages.
 // =========================================================
@@ -36,31 +35,22 @@
     var isRu = lang === "ru";
     document.documentElement.setAttribute("lang", isRu ? "ru" : "en");
 
-    // Plain text swaps: anything with data-en/data-ru, excluding nav
-    // links (handled separately below) and the always-bilingual
-    // page titles (which never swap — both languages stay visible).
-    var nodes = document.querySelectorAll(
-      "[data-en]:not(.nav-link):not(.lang-en):not(.lang-ru)"
-    );
+    // Swap every translatable text element to the selected language.
+    var nodes = document.querySelectorAll("[data-en]:not(.nav-link)");
     nodes.forEach(function (el) {
       var text = isRu ? el.getAttribute("data-ru") : el.getAttribute("data-en");
       if (text != null) el.textContent = text;
     });
 
-    // Nav links: primary label shows the current language, the
-    // hidden-until-hover reveal shows the other one.
+    // Keep navigation labels in the selected language.
     document.querySelectorAll(".nav-link").forEach(function (link) {
       var en = link.getAttribute("data-en");
       var ru = link.getAttribute("data-ru");
       var primary = link.querySelector(".nav-label-primary");
-      var secondary = link.querySelector(".nav-label-secondary");
-      if (!primary || !secondary) return;
+      if (!primary) return;
 
       primary.textContent = isRu ? ru : en;
       primary.setAttribute("lang", isRu ? "ru" : "en");
-
-      secondary.textContent = isRu ? en : ru;
-      secondary.setAttribute("lang", isRu ? "en" : "ru");
     });
 
     // Document title.

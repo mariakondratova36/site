@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="google" content="notranslate">
 <script>
   // Apply a stored language choice before first paint, so the correct
   // font stack is active immediately (avoids a flash of the wrong font).
@@ -34,22 +35,18 @@
         <a href="experience.html" class="nav-link" data-en="Experience" data-ru="Опыт">
           <span class="mark"></span>
           <span class="nav-label-primary"></span>
-          <span class="nav-reveal"><span class="nav-sep">/</span><span class="nav-label-secondary"></span></span>
         </a>
         <a href="projects.html" class="nav-link" data-en="Projects" data-ru="Проекты">
           <span class="mark"></span>
           <span class="nav-label-primary"></span>
-          <span class="nav-reveal"><span class="nav-sep">/</span><span class="nav-label-secondary"></span></span>
         </a>
         <a href="resume.html" class="nav-link" data-en="Resume" data-ru="Резюме">
           <span class="mark"></span>
           <span class="nav-label-primary"></span>
-          <span class="nav-reveal"><span class="nav-sep">/</span><span class="nav-label-secondary"></span></span>
         </a>
         <a href="contact.html" class="nav-link" data-en="Contact" data-ru="Связаться">
           <span class="mark"></span>
           <span class="nav-label-primary"></span>
-          <span class="nav-reveal"><span class="nav-sep">/</span><span class="nav-label-secondary"></span></span>
         </a>
       </nav>
 
@@ -69,14 +66,10 @@
     </div>
   </header>
 
-  <main>
+  <main class="resume-page">
     <div class="page-header">
       <p class="eyebrow"><span class="mark"></span><span data-en="03 — Resume" data-ru="03 — Резюме">03 — Resume</span></p>
-      <h1 class="page-title">
-        <span class="lang-en">Resume</span>
-        <span class="lang-ru" lang="ru">Резюме</span>
-      </h1>
-      <p class="page-intro"><span data-en="Your resume is available below, with a download link." data-ru="Ваше резюме доступно ниже вместе со ссылкой для скачивания.">Your resume is available below, with a download link.</span></p>
+      <h1 class="page-title" data-en="Resume" data-ru="Резюме">Resume</h1>
     </div>
 
     <div class="resume-frame-wrap" id="resume-frame-wrap">
@@ -85,7 +78,7 @@
         <span data-en="[PLACEHOLDER]" data-ru="[PLACEHOLDER]">[PLACEHOLDER]</span><br>
         <span data-en="Resume preview unavailable." data-ru="Предварительный просмотр резюме недоступен.">Resume preview unavailable.</span>
       </div>
-      <iframe id="resume-iframe" src="assets/resume/MashaResume_CV.pdf" title="Resume" style="display:none;"></iframe>
+      <iframe id="resume-iframe" src="assets/resume/MashaResume_CV.pdf#page=1&zoom=page-width" title="Resume" style="display:none;"></iframe>
     </div>
 
     <div class="resume-actions">

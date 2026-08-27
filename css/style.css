@@ -218,28 +218,6 @@ button:focus-visible {
   color: var(--accent);
 }
 
-/* Hover reveal: the translated word is always in the DOM, clipped to zero
-   width. Growing max-width on hover uncovers it left-to-right, like a wipe —
-   "CONTACT" becomes "CONTACT / связаться" (or the reverse in Russian mode). */
-.nav-reveal {
-  display: inline-block;
-  max-width: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  vertical-align: baseline;
-  transition: max-width 0.5s cubic-bezier(0.65, 0, 0.35, 1);
-}
-
-.primary-nav a:hover .nav-reveal,
-.primary-nav a:focus-visible .nav-reveal {
-  max-width: 280px;
-}
-
-.nav-reveal .nav-sep {
-  opacity: 0.45;
-  padding: 0 2px;
-}
-
 /* ---- Language toggle ---- */
 .lang-toggle {
   margin-top: 32px;
@@ -281,11 +259,9 @@ button:focus-visible {
 }
 
 /* ---------------------------------------------------------
-   Bilingual page titles — English set, Russian underneath
-   in a lighter weight, always shown together regardless of
-   the language toggle state.
+  Page titles
 ------------------------------------------------------------ */
-.page-title .lang-en {
+.page-title {
   display: block;
   font-family: var(--font-display);
   font-weight: 700;
@@ -295,45 +271,18 @@ button:focus-visible {
   line-height: 1.05;
 }
 
-.page-title .lang-ru {
-  display: block;
-  font-family: var(--font-display-ru);
-  font-weight: 400;
-  font-size: clamp(17px, 2.4vw, 26px);
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  line-height: 1.2;
-  color: var(--grey);
-  margin-top: 8px;
-}
-
 h1.page-title {
   margin: 0 0 20px;
 }
 
 /* Compact variant used for the home-page kicker line */
 .hero-eyebrow .eyebrow-text {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.hero-eyebrow .lang-en {
+  display: inline-block;
   font-family: var(--font-meta);
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--grey);
-}
-
-.hero-eyebrow .lang-ru {
-  font-family: var(--font-display-ru);
-  font-weight: 400;
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  text-transform: none;
-  color: var(--grey);
-  opacity: 0.75;
 }
 
 .sidebar-footer {
@@ -820,19 +769,25 @@ h1.page-title {
 ------------------------------------------------------------ */
 .resume-frame-wrap {
   border: 1px solid var(--line);
-  background: #eae7df;
+  background: #fff;
   aspect-ratio: 8.5 / 11;
-  max-width: 640px;
+  width: min(100%, 900px);
+  max-width: 900px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  box-shadow: 0 14px 35px rgba(26, 24, 21, 0.08);
 }
 
 .resume-frame-wrap iframe {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+.resume-page .page-header {
+  max-width: 900px;
 }
 
 .resume-placeholder {
